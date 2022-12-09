@@ -13,7 +13,7 @@ using std::string;
 using std::to_string;
 using std::vector;
 
-// To truncated the decimals of the RAM for aesthetic appearance of the monitor
+// To truncate the decimals of the RAM for aesthetic appearance of the monitor
 std::string reduce(float val, int d) {
     std::ostringstream s;
     s.precision(d);
