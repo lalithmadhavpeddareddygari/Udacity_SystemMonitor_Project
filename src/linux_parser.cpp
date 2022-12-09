@@ -164,7 +164,7 @@ long LinuxParser::ActiveJiffies() {
   }  
   return activeJiffs/(sysconf(_SC_CLK_TCK)); }
 
-// TODO: Read and return the number of idle jiffies for the system
+// To Read and return the number of idle jiffies for the system
 long LinuxParser::IdleJiffies() { 
   long idleJiffs;
   string value;
@@ -240,7 +240,7 @@ int LinuxParser::TotalProcesses() {
   
   return TP; }
 
-// TODO: Read and return the number of running processes
+// To Read and return the number of running processes
 int LinuxParser::RunningProcesses() { 
   int RP;
   string key;
