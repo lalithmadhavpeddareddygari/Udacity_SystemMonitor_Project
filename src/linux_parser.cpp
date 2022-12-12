@@ -127,8 +127,8 @@ long LinuxParser::Jiffies() {
 
 // To Read and return the number of active jiffies for a PID
 
-long LinuxParser::ActiveJiffies(int pid) { 
-  long activeJiffies=0;
+float LinuxParser::ActiveJiffies(int pid) { 
+  float activeJiffies=0;
   string line;
   vector<string> values;
   string value;
@@ -142,9 +142,11 @@ long LinuxParser::ActiveJiffies(int pid) {
       }
   }
   
-  
-activeJiffies= std::stol(values[13])+std::stoi(values[14])+std::stoi(values[15])+std::stoi(values[16]);
+if(values[13]!=""||values[14]!=""||values[15]!=""||values[16]!=""){  
+activeJiffies= std::stof(values[13])+std::stof(values[14])+std::stof(values[15])+std::stof(values[16]);
 return activeJiffies;}
+    
+else return 0;}
 
 // To Read and return the number of active jiffies for the system
 long LinuxParser::ActiveJiffies() { 
